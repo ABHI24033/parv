@@ -17,6 +17,8 @@ function CommonForm({
     onSubmit,
     buttonText,
     isBtnDisabled,
+    step,
+    prevButton,
 }) {
     function renderInputsByComponentType(getControlItem) {
         let element = null;
@@ -29,7 +31,7 @@ function CommonForm({
                         placeholder={getControlItem.placeholder}
                         id={getControlItem.name}
                         type={getControlItem.type}
-                        // value={value}
+                        value={value}
                         onChange={(event) =>
                             setFormData({
                                 ...formData,
@@ -49,20 +51,20 @@ function CommonForm({
                                 [getControlItem.name]: value,
                             })
                         }
-                    // value={value}
+                        value={value}
                     >
                         <SelectTrigger className="w-full">
                             <SelectValue placeholder={getControlItem.label} />
                         </SelectTrigger>
-                        <SelectContent>
+                        {/* <SelectContent>
                             {getControlItem.options && getControlItem.options.length > 0
-                                ? getControlItem.options.map((optionItem) => (
-                                    <SelectItem key={optionItem.id} value={optionItem.id}>
+                                ? getControlItem.options.map((optionItem, index) => (
+                                    <SelectItem key={index} value={optionItem.id}>
                                         {optionItem.label}
                                     </SelectItem>
                                 ))
                                 : null}
-                        </SelectContent>
+                        </SelectContent> */}
                     </Select>
                 );
 
@@ -73,7 +75,7 @@ function CommonForm({
                         name={getControlItem.name}
                         placeholder={getControlItem.placeholder}
                         id={getControlItem.id}
-                        // value={value}
+                        value={value}
                         onChange={(event) =>
                             setFormData({
                                 ...formData,
@@ -108,20 +110,32 @@ function CommonForm({
     }
 
     return (
-        <form onSubmit={onSubmit}>
-            {/* <div className="flex flex-col gap-3"> */}
-            <div className={`${formControls?.length <= 5 ? "grid-cols-1 " : "grid-cols-3 "} grid gap-3`}>
-                {formControls?.map((controlItem) => (
-                    <div className="grid w-full gap-2" key={controlItem.name}>
-                        <Label className="mb-1">{controlItem.label}</Label>
-                        {renderInputsByComponentType(controlItem)}
-                    </div>
-                ))}
-            </div>
-            <Button disabled={isBtnDisabled} type="submit" className="mt-5 float-end">
-                {buttonText || "Submit"}
-            </Button>
-        </form>
+        <>
+            <form onSubmit={onSubmit}>
+                <div className={`${formControls?.length <= 5 ? "grid-cols-2 " : "grid-cols-3 "} grid gap-3`}>
+                    {formControls?.map((controlItem, index) => (
+                        <div className="grid w-full gap-2" key={index}>
+                            <Label className="mb-1">{controlItem.label}</Label>
+                            {renderInputsByComponentType(controlItem)}
+                        </div>
+                    ))}
+                </div>
+                <div className="flex justify-end w-full gap-4 mt-5">
+                    {
+                        step > 1 ?
+                            <Button disabled={isBtnDisabled} variant="outline" type="button" onClick={prevButton} className="mt-5 ">
+                                Back
+                            </Button>
+                            : null
+                    }
+
+                    <Button disabled={isBtnDisabled} type="submit" className="mt-5 ">
+                        {buttonText || "Submit"}
+                    </Button>
+                </div>
+            </form>
+        </>
+
     );
 }
 
