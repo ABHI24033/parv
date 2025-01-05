@@ -20,6 +20,12 @@ import {
   HomeIcon,
   CarIcon,
   HandCoinsIcon,
+  Users2Icon,
+  LucideNotebookPen,
+  MessageSquareWarning,
+  MessageSquareText,
+  Contact2Icon,
+  UserPlus2Icon,
 } from "lucide-react"
 
 import { NavMain } from "@/components/nav-main.jsx"
@@ -79,27 +85,26 @@ const data = {
         },
       ]
     },
-
     {
-      title: "Settings",
+      title: "Team members",
       url: "#",
-      icon: Settings2,
+      icon: Users2Icon,
       items: [
         {
-          title: "General",
-          url: "#",
+          title: "Connectors",
+          url: "/dashboard/connectors",
         },
         {
-          title: "Team",
-          url: "#",
+          title: "Regional manager",
+          url: "/dashboard/connectors",
         },
         {
-          title: "Billing",
-          url: "#",
+          title: "Field Staff",
+          url: "/dashboard/connectors",
         },
         {
-          title: "Limits",
-          url: "#",
+          title: "Telecaller",
+          url: "/dashboard/connectors",
         },
       ],
     },
@@ -107,14 +112,24 @@ const data = {
   projects: [
     {
       title: "Blogs",
-      url: "/admin/blogs",
-      icon: Bot,
+      url: "/dashboard/blogs",
+      icon: LucideNotebookPen,
     },
     {
       title: "Testimonials",
-      url: "/admin/testimonial",
-      icon: NotebookTabsIcon,
-    }
+      url: "/dashboard/testimonials",
+      icon: MessageSquareText,
+    },
+    {
+      title: "Contact us",
+      url: "/dashboard/contact_data",
+      icon: Contact2Icon,
+    },
+    {
+      title: "Career applications",
+      url: "/dashboard/careers",
+      icon: UserPlus2Icon,
+    },
   ],
 }
 
