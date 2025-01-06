@@ -1,388 +1,440 @@
-export const loanPurpose = [
-    {
-        name: "refferal_person",
-        label: "Name of refferal person",
-        placeholder: "Referral persoan's name",
-        componentType: "input",
-        type: "text",
-    },
-    {
-        label: "Purpose of laon",
-        name: "loan_purpose",
-        componentType: "select",
-        options: [
-            { id: "1", label: "To start a new business" },
-            { id: "2", label: "For the growth of existing businness" },
-        ],
-    },
-]
-export const PersoanlInformation = [
-    {
-        name: "name",
-        label: "Name",
-        placeholder: "Enter your name",
-        componentType: "input",
-        type: "text",
-    },
-    {
-        name: "father_name",
-        label: "Father's name",
-        placeholder: "Enter your father's name",
-        componentType: "input",
-        type: "text",
-    },
-    {
-        name: "mother_name",
-        label: "Mother's name",
-        placeholder: "Enter your mother's name",
-        componentType: "input",
-        type: "text",
-    },
-    {
-        name: "phone",
-        label: "Phone number",
-        placeholder: "Enter your phone number",
-        componentType: "input",
-        type: "text",
-    },
-    {
-        name: "alternate_phone",
-        label: "Alternamte phone number",
-        placeholder: "Enter your another phone number",
-        componentType: "input",
-        type: "text",
-    },
-    {
-        name: "email",
-        label: "Email",
-        placeholder: "Enter your email address",
-        componentType: "input",
-        type: "email",
-    },
-    {
-        name: "pan_card",
-        label: "PAN Card number",
-        placeholder: "Enter your PAN Card number",
-        componentType: "input",
-        type: "text",
-    },
-    {
-        name: "birth_date",
-        label: "Date of Birth",
-        placeholder: "Date of birth",
-        componentType: "input",
-        type: "date",
-    },
-]
-export const presentAddress = [
+import { title } from "process";
 
-    {
-        name: "present_house_name",
-        label: "Building / House name",
-        placeholder: "Building / House name",
-        componentType: "input",
-        type: "text",
+export const BusinessLoan = {
+    info: {
+        title: "Prerequisits",
+        sections: [{
+            title: "something",
+            fields: [
+                {
+                    name: "name_of_referer",
+                    label: "Name of referer",
+                    type: "String",
+                },
+            ]
+        }]
     },
-    {
-        name: "present_street",
-        label: "Street / Road name",
-        placeholder: "Street / Road name",
-        componentType: "input",
-        type: "text",
+    personal_details: {
+        title: "Personal Details",
+        sections: [
+            {
+                title: "Referer",
+                fields: [
+                    {
+                        name: "name_of_referer",
+                        label: "Name of referer",
+                        type: "String",
+                    },
+                    {
+                        name: "purpose_of_loan",
+                        label: "Purpose of Loan",
+                        type: "Option",
+                        options: [
+                            { id: "1", label: "To start a new business" },
+                            { id: "2", label: "For the growth of existing business" },
+                        ]
+                    },
+                ]
+            },
+            {
+                title: "Personal Information",
+                fields: [
+                    {
+                        name: "Name",
+                        label: "Name",
+                        type: "String",
+                    },
+                    {
+                        label: "fathers_name",
+                        label: "Father's Name",
+                        type: "String",
+                    },
+                    {
+                        name: "mothers_name",
+                        label: "Mother's Name",
+                        type: "String",
+                    },
+                    {
+                        name: "phone_no",
+                        label: "Phone Number",
+                        type: "String",
+                    },
+                    {
+                        name: "alt_phone_no",
+                        label: "Alternate Phone Number",
+                        type: "String",
+                    },
+                    {
+                        name: "email",
+                        label: "Email",
+                        type: "String",
+                    },
+                    {
+                        name: "pan",
+                        label: "PAN Number",
+                        type: "String",
+                    },
+                    {
+                        name: "dob",
+                        label: "Date of Birth",
+                        type: "Date",
+                    }
+                ]
+            },
+            {
+                title: "Present Address",
+                fields: [
+                    {
+                        name: "building_name",
+                        label: "Building/House Name",
+                        type: "String"
+                    },
+                    {
+                        name: "street_name",
+                        label: "Street/Road Name",
+                        type: "String"
+                    },
+                    {
+                        name: "landmark",
+                        label: "Landmark",
+                        type: "String"
+                    },
+                    {
+                        name: "city",
+                        label: "City",
+                        type: "String"
+                    },
+                    {
+                        name: "district",
+                        label: "District",
+                        type: "String"
+                    },
+                    {
+                        name: "state",
+                        label: "State",
+                        type: "String"
+                    },
+                    {
+                        name: "pincode",
+                        label: "Pincode",
+                        type: "String"
+                    },
+                ]
+            },
+            {
+                title: "Permanent Address",
+                fields: [
+                    {
+                        name: "building_name",
+                        label: "Building/House Name",
+                        type: "String"
+                    },
+                    {
+                        name: "street_name",
+                        label: "Street/Road Name",
+                        type: "String"
+                    },
+                    {
+                        name: "landmark",
+                        label: "Landmark",
+                        type: "String"
+                    },
+                    {
+                        name: "city",
+                        label: "City",
+                        type: "String"
+                    },
+                    {
+                        name: "district",
+                        label: "District",
+                        type: "String"
+                    },
+                    {
+                        name: "state",
+                        label: "State",
+                        type: "String"
+                    },
+                    {
+                        name: "pincode",
+                        label: "Pincode",
+                        type: "String"
+                    },
+                ]
+            }
+        ]
     },
-    {
-        name: "present_landmark",
-        label: "Landmark",
-        placeholder: "Enter your nearest landmark",
-        componentType: "input",
-        type: "text",
-    },
-    {
-        name: "present_town",
-        label: "Town ",
-        placeholder: "Town",
-        componentType: "input",
-        type: "text",
-    },
-    {
-        name: "present_district",
-        label: "District",
-        placeholder: "District",
-        componentType: "input",
-        type: "text",
-    },
-    {
-        name: "present_state",
-        label: "State",
-        placeholder: "State",
-        componentType: "input",
-        type: "text",
-    },
-    {
-        name: "present_pincode",
-        label: "pincode",
-        placeholder: "pincode",
-        componentType: "input",
-        type: "text",
-    },
-]
+    employment: {
+        title: "Employment & Loans",
+        sections: [
+            {
+                title: "Income Details",
+                fields: [
+                    {
+                        name: "company_name",
+                        label: "Company / firm Name",
+                        type: "String",
+                    },
+                    {
+                        name: "company_age",
+                        label: "How old your business?",
+                        type: "Option",
+                        options: [
+                            { id: "1", label: "0-1 years" },
+                            { id: "2", label: "1-3 years" },
+                            { id: "3", label: "3-5 years" },
+                            { id: "4", label: "more than 5 years" },
+                        ]
+                    },
+                    {
+                        name: "registration_paper",
+                        label: "Select registration paper you have for your business?",
+                        type: "Option",//multi-select
+                        options: [
+                            { id: "1", label: "GST registration" },
+                            { id: "2", label: "UDYOG AAdhar registration" },
+                            { id: "3", label: "Form-3 or trade licence" },
+                            { id: "4", label: "any other" },
+                            { id: "5", label: "I don't have any registartion" },
+                        ]
+                    },
+                ]
+            },
+            {
+                title: "Current Account's",
+                fields: [
+                    {
+                        name: "have_current_account",
+                        label: "Do you have current account?",
+                        type: "Binary",
+                    },
+                    {
+                        name: "current_account_bank_name",
+                        label: "Bank name in which your current account.",
+                        type: "String",
+                    },
+                    {
+                        name: "name_in_current_account",
+                        label: "In whose name is the current account?",
+                        type: "Option",
+                        options: [
+                            { id: "1", label: "My business" },
+                            { id: "2", label: "Myself" },
+                        ]
+                    },
+                    {
+                        name: "current_account_age",
+                        label: "How old is your current account?",
+                        type: "Option",
+                        options: [
+                            { id: "1", label: "Less than 1 year" },
+                            { id: "2", label: "1-3 years" },
+                            { id: "3", label: "3-5 years" },
+                            { id: "4", label: "more than years" },
+                        ]
+                    },
+                    {
+                        name: "current_account_turnover",
+                        label: "What is the turnover of your current account?",
+                        type: "Option",
+                        options: [
+                            { id: "1", label: "Below 10 lakhs" },
+                            { id: "2", label: "10-20 lakhs" },
+                            { id: "3", label: "20-30 lakhs" },
+                            { id: "4", label: "30-50 lakhs" },
+                            { id: "5", label: "50-70 lakhs" },
+                            { id: "6", label: "70-1 crore" },
+                            { id: "7", label: "above 1 crore" },
+                        ]
+                    },
+                ]
+            },
+            {
+                title:"Saving account",
+                fields:[
+                    {
+                        name: "saving_account_bank_name",
+                        label: "Bank name in which your saving account.",
+                        type: "String",
+                    },
+                    {
+                        name: "saving_account_turnover",
+                        label: "Turnover of your saving account",
+                        type: "Option",
+                        options: [
+                            { id: "1", label: "Less than 10 lakhs" },
+                            { id: "2", label: "10-20 lakhs" },
+                            { id: "3", label: "20-50 lakhs" },
+                            { id: "4", label: "50-1 crore" },
+                            { id: "5", label: "above 1 crore" },
+                        ]
+                    },
+                ]
+            },
+            {
+                title: "Documents",
+                fields: [
+                    {
+                        name: "file_income_tax",
+                        label: "Do you file income tax?",
+                        type: "Binary",
+                    },
+                    {
+                        name: "have_income_tax_return",
+                        label: "Do you have income tax return of last 2 years?",
+                        type: "Binary",
+                    },
+                    {
+                        name: "is_family_files_income_tax",
+                        label: "Anyone else files income tax in your family?",
+                        type: "Binary",
+                    },
+                    {
+                        name: "itr_amount_22_23",
+                        label: "Amount of ITR you filled for 2022-23?",
+                        type: "String",
 
-export const permanentAddress = [
-    {
-        name: "permanent_house_name",
-        label: "Building / House name",
-        placeholder: "Building / House name",
-        componentType: "input",
-        type: "text",
-    },
-    {
-        name: "permanent_street",
-        label: "Street / Road name",
-        placeholder: "Street / Road name",
-        componentType: "input",
-        type: "text",
-    },
-    {
-        name: "permanent_landmark",
-        label: "Landmark",
-        placeholder: "Enter your nearest landmark",
-        componentType: "input",
-        type: "text",
-    },
-    {
-        name: "permanent_town",
-        label: "Town ",
-        placeholder: "Town",
-        componentType: "input",
-        type: "text",
-    },
-    {
-        name: "permanent_district",
-        label: "District",
-        placeholder: "District",
-        componentType: "input",
-        type: "text",
-    },
-    {
-        name: "permanent_state",
-        label: "State",
-        placeholder: "State",
-        componentType: "input",
-        type: "text",
-    },
-    {
-        name: "permanent_pincode",
-        label: "pincode",
-        placeholder: "pincode",
-        componentType: "input",
-        type: "text",
-    },
-]
-// page2 data
-export const incomeDetail = [
-    {
-        name: "comapny_name",
-        label: "Company / firm name",
-        placeholder: "Company / firm name",
-        componentType: "input",
-        type: "text",
-    },
-    {
-        label: "How old your business?",
-        name: "business_age",
-        componentType: "select",
-        options: [
-            { id: "1", label: "0-1 years" },
-            { id: "2", label: "1-3 years" },
-            { id: "3", label: "3-5 years" },
-            { id: "4", label: "more than 5 years" },
-        ],
-    },
-    {
-        label: "Select the registration paper you have for your business",
-        name: "registartion_paper",
-        componentType: "checkbox",
-        options: [
-            { id: "1", label: "GST registration" },
-            { id: "2", label: "UDYOG AADHAR registration" },
-            { id: "3", label: "FORM-3 or Trade licence" },
-            { id: "4", label: "Any others" },
-            { id: "5", label: "I don't have any registration" },
-        ],
-    },
-    {
-        label: "Your monthly income",
-        name: "job_experience",
-        componentType: "select",
-        options: [
-            { id: "1", label: "less than 12,000" },
-            { id: "2", label: "15,000 - 20,000" },
-            { id: "3", label: "20,000 - 25,000" },
-            { id: "4", label: "25-000 - 30,000" },
-            { id: "5", label: "30,000 - 35,000" },
-            { id: "5", label: "35,000 - 45,000" },
-            { id: "5", label: "above 45,000" },
-        ],
-    },
-    {
-        name: "salary_account_bank",
-        label: "Your salary account in which bank",
-        placeholder: "Your salary account in which bank",
-        componentType: "input",
-        type: "text",
-    },
-    {
-        name: "saving_account_bank",
-        label: "Your saving account in which bank",
-        placeholder: "Your saving account in which bank",
-        componentType: "input",
-        type: "text",
-    },
-]
-
-export const radioQuestions = [
-    {
-        name: "isOffer_letter",
-        label: "Do you have job offer letter of current job?",
-        placeholder: "Do you have job offer letter of current job?",
-        componentType: "radio",
-        type: "radio",
-        options: [
-            {
-                id: 1,
-                value: "yes",
-                label: "YES"
+                    },
+                    {
+                        name: "itr_amount_23_24",
+                        label: "Amount of ITR you filled for 2023-24?",
+                        type: "String",
+                    },
+                ]
             },
             {
-                id: 2,
-                value: "no",
-                label: "NO",
+                title: "Property Information",
+                fields: [
+                    {
+                        name: "have_property_for_mortage",
+                        label: "Do you have any property which you can give for moratge?",
+                        type: "Binary",
+                    },
+                    {
+                        name: "saving_account_turnover",
+                        label: "Your property is located in :-",
+                        type: "Option",
+                        options: [
+                            { id: "1", label: "Gram panchayat" },
+                            { id: "2", label: "Nagar panchayat" },
+                            { id: "3", label: "Nagar Parishad" },
+                            { id: "4", label: "Nagar Nigam" },
+                        ]
+                    },
+                    {
+                        name: "who_own_property",
+                        label: "Who is the owner of property?",
+                        type: "Option",
+                        options: [
+                            { id: "1", label: "Myself" },
+                            { id: "2", label: "Father" },
+                            { id: "3", label: "Mother" },
+                            { id: "4", label: "Spouse" },
+                            { id: "5", label: "Grand father" },
+                            { id: "6", label: "Grand mother" },
+                            { id: "7", label: "Other" },
+                        ]
+                    },
+                    {
+                        name: "have_17_kahta_agri_land",
+                        label: "Do you have 17 khata agriculture land?",
+                        type: "Binary",
+                    },
+                    {
+                        name: "needs_of_documents",
+                        label: "We need the following documents of property, select which are available?",
+                        type: "Option",//multi select
+                        options: [
+                            { id: "1", label: "Khatiyan (In case of inherited property)" },
+                            { id: "2", label: "Sale deed (If you have purchase property)" },
+                            { id: "3", label: "LPC certificate" },
+                            { id: "4", label: "Current rashid of property" },
+                        ]
+                    },
+                ]
+            },
+           
+        ]
+    },
+    Documents: {
+        title: "Documents",
+        sections: [
+            {
+                title: "Persoanl Documents",
+                fields: [
+                    {
+                        name: "aadhar_front",
+                        label: "Uplaod aadhar front image",
+                        type: "File",
+                    },
+                    {
+                        name: "aadhar_back",
+                        label: "Uplaod aadhar back image",
+                        type: "File",
+                    },
+                    {
+                        name: "persoanl_pan",
+                        label: "Uplaod persoanl PAN image",
+                        type: "File",
+                    },
+                ]
+            },
+            {
+                title: "Business Documents",
+                fields: [
+                    {
+                        name: "comapny_image",
+                        label: "Upload company / firm image?",
+                        type: "File",
+                    },
+                    {
+                        name: "gst_certificate",
+                        label: "Upload GST certificate (if available)",
+                        type: "File",
+                    },
+                    {
+                        name: "udyam_registration",
+                        label: "Upload UDYAM registration (if available)",
+                        type: "File",
+                    },
+                    {
+                        name: "form_3",
+                        label: "Upload Form-3 (if available)",
+                        type: "File",
+                    },
+                    {
+                        name: "itr_22_23",
+                        label: "Upload ITR 2022-23 (if available)",
+                        type: "File",
+                    },
+                    {
+                        name: "itr_23_23",
+                        label: "Upload ITR 2023-24 (if available)",
+                        type: "File",
+                    },
+                    {
+                        name: "bank_statement",
+                        label: "Upload bank statement of last 12 months in net banking formate",
+                        type: "File",
+                    },
+                    {
+                        name: "shop_front",
+                        label: "Upload Shop front picture",
+                        type: "File",
+                    },
+                    {
+                        name: "house_electricity",
+                        label: "Upload house electricity bill",
+                        type: "File",
+                    },
+                    
+                    {
+                        name: "other_doc",
+                        label: "Upload any other documents",
+                        type: "File",
+                    },
+                    
+                ]
             },
         ]
     },
-    {
-        name: "isForm_16",
-        label: "Do you have form-16 or TAN number?",
-        placeholder: "Do you have form-16 or TAN number?",
-        componentType: "radio",
-        type: "radio",
-        options: [
-            {
-                id: 1,
-                value: "yes",
-                label: "YES"
-            },
-            {
-                id: 2,
-                value: "no",
-                label: "NO",
-            },
-        ]
-    },
-    {
-        name: "isSalary_slip",
-        label: "Do you have salary slip of last 3 months?",
-        placeholder: "Do you have salary slip of last 3 months?",
-        componentType: "radio",
-        type: "radio",
-        options: [
-            {
-                id: 1,
-                value: "yes",
-                label: "YES"
-            },
-            {
-                id: 2,
-                value: "no",
-                label: "NO",
-            },
-            {
-                id: 3,
-                value: "maybe",
-                label: "Maybe",
-            },
-        ]
-    },
-    {
-        name: "isBank_statement",
-        label: "Can you provide bank statement of last 6 or 12 months in Net banking formate?",
-        placeholder: "Bank statement",
-        componentType: "radio",
-        type: "radio",
-        options: [
-            {
-                id: 1,
-                value: "yes",
-                label: "YES"
-            },
-            {
-                id: 2,
-                value: "no",
-                label: "NO",
-            },
-        ]
-    },
-    {
-        name: "isCurrent_loan",
-        label: "Do you have any current loan?",
-        placeholder: "Do you have any current loan?",
-        componentType: "radio",
-        type: "radio",
-        options: [
-            {
-                id: 1,
-                value: "yes",
-                label: "YES"
-            },
-            {
-                id: 2,
-                value: "no",
-                label: "NO",
-            },
-        ]
-    },
-]
-
-export const currentLoan = [
-    {
-        label: "Total loan amount",
-        name: "loan_amount",
-        componentType: "select",
-        options: [
-            { id: "1", label: "less than 50,000" },
-            { id: "2", label: "50,000 - 1 lakh" },
-            { id: "3", label: "1 lakh - 3 lakh" },
-            { id: "4", label: "3 lakh - 5 lakh" },
-            { id: "5", label: "5 lakh - 10 lakh" },
-            { id: "6", label: "10 lakh - 20 lakh" },
-            { id: "7", label: "above 20 lakh" },
-        ],
-    },
-    {
-        name: "loan_provider_bank",
-        label: "Name the bank which provides loan to you. ",
-        placeholder: "Bank name which provides loan",
-        componentType: "input",
-        type: "text",
-    },
-    {
-        label: "When you took loan",
-        name: "when_took_loan",
-        componentType: "select",
-        options: [
-            { id: "1", label: "0-12 months before" },
-            { id: "2", label: "12-24 months before" },
-            { id: "3", label: "24-36 months before" },
-            { id: "4", label: "36-48 months before" },
-            { id: "5", label: "48-60 months before" },
-            { id: "6", label: "more than 60 months" },
-        ],
-    },
-    {
-        name: "monthly_emi",
-        label: "what is monthly EMI currently you are paying",
-        placeholder: "Monthly EMI",
-        componentType: "input",
-        type: "text",
-    },
-]
+}
