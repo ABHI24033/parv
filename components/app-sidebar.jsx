@@ -15,9 +15,20 @@ import {
   SquareTerminal,
   NotebookTabs,
   NotebookTabsIcon,
+  FileUser,
+  BriefcaseBusinessIcon,
+  HomeIcon,
+  CarIcon,
+  HandCoinsIcon,
+  Users2Icon,
+  LucideNotebookPen,
+  MessageSquareWarning,
+  MessageSquareText,
+  Contact2Icon,
+  UserPlus2Icon,
 } from "lucide-react"
 
-import { NavMain } from "@/components/nav-main"
+import { NavMain } from "@/components/nav-main.jsx"
 import { NavProjects } from "@/components/nav-projects.jsx"
 import { NavUser } from "@/components/nav-user"
 // import { TeamSwitcher } from "@/components/team-switcher"
@@ -41,53 +52,59 @@ const data = {
   navMain: [
     {
       title: "Loan Applications",
-      url: "/admin/applications",
+      url: "/dashboard",
       icon: ClipboardType,
       isActive: true,
       items: [
         {
           title: "Personal Loan",
-          url: "/admin/persoanl-loan"
+          url: "/dashboard/forms/personal_loan",
+          icon:FileUser,
+          isActive: true,
         },
         {
-          title: "Personal Loan",
-          url: "/admin/persoanl-loan"
+          title: "Business Loan",
+          url: "/dashboard/forms/business_loan",
+          icon:BriefcaseBusinessIcon,
+          isActive: false,
         },
         {
-          title: "Personal Loan",
-          url: "/admin/persoanl-loan"
+          title: "Home Loan",
+          url: "/dashboard/forms/home_loan",
+          icon:HomeIcon,
         },
         {
-          title: "Personal Loan",
-          url: "/admin/persoanl-loan"
+          title: "Vehicle Loan",
+          url: "/dashboard/forms/vehicle_loan",
+          icon:CarIcon,
         },
         {
-          title: "Personal Loan",
-          url: "/admin/persoanl-loan"
+          title: "Gold Loan",
+          url: "/dashboard/forms/gold_loan",
+          icon:HandCoinsIcon,
         },
       ]
     },
-
     {
-      title: "Settings",
+      title: "Team members",
       url: "#",
-      icon: Settings2,
+      icon: Users2Icon,
       items: [
         {
-          title: "General",
-          url: "#",
+          title: "Connectors",
+          url: "/dashboard/connectors",
         },
         {
-          title: "Team",
-          url: "#",
+          title: "Regional manager",
+          url: "/dashboard/connectors",
         },
         {
-          title: "Billing",
-          url: "#",
+          title: "Field Staff",
+          url: "/dashboard/connectors",
         },
         {
-          title: "Limits",
-          url: "#",
+          title: "Telecaller",
+          url: "/dashboard/connectors",
         },
       ],
     },
@@ -95,14 +112,24 @@ const data = {
   projects: [
     {
       title: "Blogs",
-      url: "/admin/blogs",
-      icon: Bot,
+      url: "/dashboard/blogs",
+      icon: LucideNotebookPen,
     },
     {
       title: "Testimonials",
-      url: "/admin/testimonial",
-      icon: NotebookTabsIcon,
-    }
+      url: "/dashboard/testimonials",
+      icon: MessageSquareText,
+    },
+    {
+      title: "Contact us",
+      url: "/dashboard/contact_data",
+      icon: Contact2Icon,
+    },
+    {
+      title: "Career applications",
+      url: "/dashboard/careers",
+      icon: UserPlus2Icon,
+    },
   ],
 }
 
