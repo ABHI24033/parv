@@ -18,7 +18,7 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 
 
 
-const Step = ({ state, setState, step }) => {
+export const Step = ({ state, setState, step }) => {
     return <div className="flex flex-col gap-8">
         {
             state[Object.keys(state)[step]].sections.map((section, i) => {
@@ -44,6 +44,11 @@ const Step = ({ state, setState, step }) => {
                                     return <div className="flex flex-col gap-2">
                                         <Label htmlFor={field.name}>{field.label}</Label>
                                         <Input type="date" />
+                                    </div>;
+                                case "File":
+                                    return <div className="flex flex-col gap-2">
+                                        <Label htmlFor={field.name}>{field.label}</Label>
+                                        <Input type="file" className="cursor-pointer"/>
                                     </div>;
                                 case "Option":
                                     return <div className="flex flex-col gap-2 w-full">
@@ -94,7 +99,7 @@ const Step = ({ state, setState, step }) => {
     </div>
 }
 
-const StepForm = ({
+export const StepForm = ({
     state, setState, step
 }) => {
     return <Step state={state} setState={setState} step={step}></Step>

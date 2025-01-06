@@ -19,7 +19,7 @@ const FormStepper = ({ keys, step }) => {
                             step > index ? <Icons fill="blue" /> : <Icons fill="gray" />
                         }
                         <p className="min-w-max">{key}</p>
-                        {index == keys.length - 1 ? null : <Separator />}
+                        {index == keys.length - 1 ? null : <Separator className="w-full" />}
                     </div>
                 })
             }
