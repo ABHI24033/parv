@@ -36,7 +36,7 @@
     "components/login-form.jsx",
     "components/app-sidebar.jsx",
     "components/nav-projects.jsx"
-  ],
+, "components/nav-main.jsx"  ],
   "exclude": [
     "node_modules"
   ]
