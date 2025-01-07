@@ -1,5 +1,6 @@
 import { Award, Car, CircleUser, Factory, Fence, Gem, GraduationCap, HomeIcon, ShieldPlus, Sparkles, Stethoscope, User } from "lucide-react";
 import { Poppins } from "next/font/google"
+import Link from "next/link";
 
 
 const poppins = Poppins({
@@ -11,31 +12,43 @@ const poppins = Poppins({
 export default function Home() {
   return (
     <div className={`${poppins.className} w-screen min-h-screen h-fit flex flex-col bg-blue-100/75`}>
-      <header className="flex items-center justify-between p-8 absolute top-0"></header>
+      <header className="flex flex-row items-center justify-between p-4 px-8 top-0 w-full bg-blue-100/75  text-sm sm:sticky absolute -left-full sm:left-0">
+        <h4>Parv</h4>
+        <div className="flex flex-row items-center justify-center gap-4 flex-1">
+          <Link href="About">About Us</Link>
+          <Link href="About">Contact Us</Link>
+          <Link href="About">Career</Link>
+        </div>
+        <div className="flex flex-row items-center just">
+        <Link href="login" className="flex items-center justify-center px-4 py-2 bg-blue-800 rounded-md text-white">Login</Link>
+        </div>
+      </header>
       <main className="flex flex-col w-screen h-fit">
-        <section className="flex items-center justify-start py-8 px-16 min-h-screen min-w-screen">
-          <div className="flex flex-col w-full gap-8">
-            <h1 className="text-5xl max-w-[20ch]">Lorem ipsum dolor sit amet consectetur adipisicing elit.</h1>
+        <section className="flex items-center justify-start sm:py-8 sm:px-16 p-4 min-h-screen min-w-screen flex-row">
+          <div className="flex flex-col gap-8 flex-1">
+            <h1 className="sm:text-5xl max-w-[20ch] text-3xl">Lorem ipsum dolor sit amet consectetur adipisicing elit.</h1>
             <p className="max-w-[50ch]">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla ipsam asperiores molestias. Eos labore sapiente totam, ad, alias voluptatibus et, rem debitis quidem inventore officia asperiores corporis harum odio eligendi.</p>
             <div className="flex gap-4">
-              <button type="button" className="flex items-center justify-center px-8 py-4 rounded-md bg-slate-400">Book Now</button>
-              <button type="button" className="flex items-center justify-center px-8 py-4 rounded-md border border-gray-500" >Read More</button>
+            <Link href="login" className="flex items-center justify-center px-4 py-2 bg-blue-800 rounded-md text-white">Contact Us</Link>
+            <Link href="login" className="flex items-center justify-center px-4 py-2 rounded-md border border-blue-800 text-blue-800">Login</Link>
             </div>
           </div>
+          <div className="flex-1 sm:block hidden"></div>
         </section>
-        <section className="flex items-center justify-end p-8 min-h-screen min-w-screen">
-          <div className="flex flex-col w-fit gap-8">
+        <section className="flex items-center justify-end sm:py-8 sm:px-16 p-4 min-h-screen min-w-screen">
+          <div className="flex flex-col gap-8 flex-1">
             <h4 className="w-fit flex items-center justify-center px-2 py-1 rounded-full bg-blue-400 text-xs">About Us</h4>
             <h2 className="text-3xl max-w-[40ch]">Lorem ipsum dolor sit amet consectetur adipisicing elit.</h2>
             <p className="max-w-[70ch]">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla ipsam asperiores molestias. Eos labore sapiente totam, ad, alias voluptatibus et, rem debitis quidem inventore officia asperiores corporis harum odio eligendi.</p>
-            <div className="flex flex-row gap-16 items-start">
+            <div className="flex sm:flex-row flex-col md:gap-16 gap-4 items-start">
               <div className="flex flex-row items-center gap-2">  <Award /> <p>Excellence</p></div>
               <div className="flex flex-row items-center gap-2">  <ShieldPlus /> <p>Professionalism</p></div>
               <div className="flex flex-row items-center gap-2">  <Sparkles /> <p>Expert</p></div>
             </div>
           </div>
+          <div className="flex-1 sm:block hidden"></div>
         </section>
-        <section className="flex flex-col items-center justify-center p-8 gap-4">
+        <section className="flex flex-col items-center justify-center sm:py-8 sm:px-16 p-4 gap-4">
           <h4 className="flex items-center justify-center px-2 py-1 rounded-full bg-blue-400 text-xs">Loans</h4>
           <h2 className="text-3xl max-w-[40ch] text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit.</h2>
           <div className="flex flex-row flex-wrap items-center justify-center gap-4 w-full">
@@ -81,8 +94,7 @@ export default function Home() {
             </div>
           </div>
         </section>
-       
-        <section className="flex flex-col items-center justify-end p-8 min-h-screen min-w-screen gap-8">
+        <section className="flex flex-col items-center justify-end sm:py-8 sm:px-16 p-4 min-h-screen min-w-screen gap-8">
           <div className="flex flex-col w-full gap-8 items-center">
             <h4 className="w-fit flex items-center justify-center px-2 py-1 rounded-full bg-blue-400 text-xs">Testimonials</h4>
             <h2 className="text-3xl max-w-[40ch] text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit.</h2>
@@ -149,13 +161,12 @@ export default function Home() {
           </div>
         </section>
       </main>
-      <footer className="flex flex-row p-8">
-        <div className="flex items-center justify-center">
-
-        </div>
-        <div className="flex flex-row items-center justify-center">
-          <p>About Us</p>
-          <p>Loans</p>
+      <footer className="flex flex-row p-8 justify-between bg-blue-400">
+      <h4>Parv</h4>
+        <div className="flex flex-row items-center justify-end gap-4 flex-1">
+          <Link href="About">About Us</Link>
+          <Link href="About">Contact Us</Link>
+          <Link href="About">Career</Link>
         </div>
       </footer>
     </div>
