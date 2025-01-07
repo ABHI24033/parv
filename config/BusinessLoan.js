@@ -167,7 +167,7 @@ export const BusinessLoan = {
         title: "Employment & Loans",
         sections: [
             {
-                title: "Income Details",
+                title: "Business Income Details",
                 fields: [
                     {
                         name: "company_name",
@@ -249,8 +249,8 @@ export const BusinessLoan = {
                 ]
             },
             {
-                title:"Saving account",
-                fields:[
+                title: "Saving account",
+                fields: [
                     {
                         name: "saving_account_bank_name",
                         label: "Bank name in which your saving account.",
@@ -267,6 +267,31 @@ export const BusinessLoan = {
                             { id: "4", label: "50-1 crore" },
                             { id: "5", label: "above 1 crore" },
                         ]
+                    },
+                ]
+            },
+            {
+                title: "Previous Loan History",
+                fields: [
+                    {
+                        name: "loan_provider_bank",
+                        label: "Bank name in which which provides you loan?.",
+                        type: "String",
+                    },
+                    {
+                        name: "total_loan_amount",
+                        label: "Total loan amount",
+                        type: "String",
+                    },
+                    {
+                        name: "current_emi",
+                        label: "Current EMI",
+                        type: "String",
+                    },
+                    {
+                        name: "remaining_amount",
+                        label: "Remaining amount",
+                        type: "String",
                     },
                 ]
             },
@@ -352,7 +377,7 @@ export const BusinessLoan = {
                     },
                 ]
             },
-           
+
         ]
     },
     Documents: {
@@ -426,13 +451,13 @@ export const BusinessLoan = {
                         label: "Upload house electricity bill",
                         type: "File",
                     },
-                    
+
                     {
                         name: "other_doc",
                         label: "Upload any other documents",
                         type: "File",
                     },
-                    
+
                 ]
             },
         ]

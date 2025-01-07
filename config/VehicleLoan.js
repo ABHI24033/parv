@@ -1,6 +1,5 @@
-import { title } from "process";
 
-export const TitleLoan = {
+export const VehicleLoan = {
     info: {
         title: "Prerequisits",
         sections: [{
@@ -164,8 +163,8 @@ export const TitleLoan = {
             }
         ]
     },
-    employment: {
-        title: "Employment & Loans",
+    vehicleDetails: {
+        title: "Vehicle Details",
         sections: [
             {
                 title: "Vehicle Details",
@@ -230,6 +229,104 @@ export const TitleLoan = {
                             { id: "3", label: "Othres" },
                         ]
                     },
+                ]
+            },
+
+
+        ]
+    },
+    employment: {
+        title: "Employment & Loans",
+        sections: [
+            {
+                title: "Income Details",
+                fields: [
+                    {
+                        name: "company_name",
+                        label: "Company / firm Name",
+                        type: "String",
+                    },
+                    {
+                        name: "company_age",
+                        label: "How old your business?",
+                        type: "Option",
+                        options: [
+                            { id: "1", label: "0-1 years" },
+                            { id: "2", label: "1-3 years" },
+                            { id: "3", label: "3-5 years" },
+                            { id: "4", label: "more than 5 years" },
+                        ]
+                    },
+                    {
+                        name: "registration_paper",
+                        label: "Select registration paper you have for your business?",
+                        type: "Option",//multi-select
+                        options: [
+                            { id: "1", label: "GST registration" },
+                            { id: "2", label: "UDYOG AAdhar registration" },
+                            { id: "3", label: "Form-3 or trade licence" },
+                            { id: "4", label: "any other" },
+                            { id: "5", label: "I don't have any registartion" },
+                        ]
+                    },
+                ]
+            },
+            {
+                title: "Income Details",
+                fields: [
+                    {
+                        name: "current_company_name",
+                        label: "Current Company Name",
+                        type: "String",
+                    },
+                    {
+                        name: "salary_account_bank",
+                        label: "Salary Account Bank Name",
+                        type: "String",
+                    },
+                    {
+                        name: "savings_account_bank",
+                        label: "Savings Account Bank Name",
+                        type: "String",
+                    },
+                    {
+                        name: "job_tenure",
+                        label: "Job tenure in current company",
+                        type: "Option",
+                        options: [
+                            { id: "1", label: "0-12 months" },
+                            { id: "2", label: "12-24 months" },
+                            { id: "3", label: "24-60 months" },
+                            { id: "4", label: "more than 60 months" },
+                        ]
+                    },
+                    {
+                        name: "job_experience",
+                        label: "Experience",
+                        type: "Option",
+                        options: [
+                            { id: "1", label: "less than 1 year" },
+                            { id: "2", label: "1-2 years" },
+                            { id: "3", label: "2-3 years" },
+                            { id: "4", label: "3-5 years" },
+                            { id: "5", label: "more than 5 years" },
+                        ]
+                    },
+                    {
+                        name: "monthly_income",
+                        label: "Your Monthly Income",
+                        type: "Option",
+                        options: [
+                            { id: "1", label: "less than 12,000" },
+                            { id: "2", label: "15,000 - 20,000" },
+                            { id: "3", label: "20,000 - 25,000" },
+                            { id: "4", label: "25-000 - 30,000" },
+                            { id: "5", label: "30,000 - 35,000" },
+                            { id: "5", label: "35,000 - 45,000" },
+                            { id: "5", label: "above 45,000" },
+                        ],
+                    },
+
                 ]
             },
             {
@@ -300,6 +397,31 @@ export const TitleLoan = {
                             { id: "4", label: "50-1 crore" },
                             { id: "5", label: "above 1 crore" },
                         ]
+                    },
+                ]
+            },
+            {
+                title: "Previous Loan History",
+                fields: [
+                    {
+                        name: "loan_provider_bank",
+                        label: "Bank name in which which provides you loan?.",
+                        type: "String",
+                    },
+                    {
+                        name: "total_loan_amount",
+                        label: "Total loan amount",
+                        type: "String",
+                    },
+                    {
+                        name: "current_emi",
+                        label: "Current EMI",
+                        type: "String",
+                    },
+                    {
+                        name: "remaining_amount",
+                        label: "Remaining amount",
+                        type: "String",
                     },
                 ]
             },
