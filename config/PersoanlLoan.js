@@ -229,6 +229,13 @@ export const PersonalLoan = {
                         name: "have_offer_letter",
                         label: "Do you have job offer letter of current job?",
                         type: "Binary",
+                        fields:[
+                            {
+                                name: "offer_letter",
+                                label: "Offer Letter",
+                                type: "String",
+                            }
+                        ]
                     },
                     {
                         name: "have_tan_no",

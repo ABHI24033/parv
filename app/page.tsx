@@ -1,7 +1,8 @@
-import { Award, Car, CircleUser, Factory, Fence, Gem, GraduationCap, HomeIcon, ShieldPlus, Sparkles, Stethoscope, User } from "lucide-react";
+import { Award, Car, CircleUser, Factory, Fence, Gem, GraduationCap, HomeIcon, Menu, ShieldPlus, Sparkles, Stethoscope, User } from "lucide-react";
 import { Poppins } from "next/font/google"
 import Link from "next/link";
-
+import HeroSectionImage from "@/public/hero-section.jpg";
+import Image from "next/image";
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -11,7 +12,10 @@ const poppins = Poppins({
 
 export default function Home() {
   return (
-    <div className={`${poppins.className} w-screen min-h-screen h-fit flex flex-col bg-blue-100/75`}>
+    <div className={`${poppins.className} w-screen min-h-screen h-fit flex flex-col bg-blue-100/75 relative`}>
+      <span className="sm:hidden block absolute top-0 right-0 p-4 w-fit">
+      <Menu />
+      </span>
       <header className="flex flex-row items-center justify-between p-4 px-8 top-0 w-full bg-blue-100/75  text-sm sm:sticky absolute -left-full sm:left-0">
         <h4>Parv</h4>
         <div className="flex flex-row items-center justify-center gap-4 flex-1">
@@ -24,16 +28,20 @@ export default function Home() {
         </div>
       </header>
       <main className="flex flex-col w-screen h-fit">
-        <section className="flex items-center justify-start sm:py-8 sm:px-16 p-4 min-h-screen min-w-screen flex-row">
-          <div className="flex flex-col gap-8 flex-1">
-            <h1 className="sm:text-5xl max-w-[20ch] text-3xl">Lorem ipsum dolor sit amet consectetur adipisicing elit.</h1>
-            <p className="max-w-[50ch]">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla ipsam asperiores molestias. Eos labore sapiente totam, ad, alias voluptatibus et, rem debitis quidem inventore officia asperiores corporis harum odio eligendi.</p>
+        <section className="flex items-center justify-start h-screen min-w-screen flex-row">
+          <div className="flex flex-col gap-8 flex-1 sm:px-16 px-4">
+            <h1 className="sm:text-5xl max-w-[19ch] text-3xl">Unlock hassle-free loans from the comfort of your home</h1>
+            <p className="max-w-[50ch]"> Apply for a loan online in minutes. Our simple and secure platform makes it easy to get the funds you need, from anywhere.</p>
             <div className="flex gap-4">
             <Link href="login" className="flex items-center justify-center px-4 py-2 bg-blue-800 rounded-md text-white">Contact Us</Link>
             <Link href="login" className="flex items-center justify-center px-4 py-2 rounded-md border border-blue-800 text-blue-800">Login</Link>
             </div>
           </div>
-          <div className="flex-1 sm:block hidden"></div>
+          <div className="flex-1 sm:block hidden overflow-hidden h-full bg-center bg-cover"  style={{
+            backgroundImage:`url('/hero-section.jpg')`
+          }}>
+            {/* <Image src={HeroSectionImage} className="w-full h-auto" alt="hero"/> */}
+          </div>
         </section>
         <section className="flex items-center justify-end sm:py-8 sm:px-16 p-4 min-h-screen min-w-screen">
           <div className="flex flex-col gap-8 flex-1">
@@ -160,6 +168,22 @@ export default function Home() {
             </div>
           </div>
         </section>
+        <section className="flex sm:flex-row flex-col items-stretch justify-end sm:py-8 sm:px-16 p-4 sm:min-h-screen min-w-screen gap-8">
+        <div className="flex flex-col gap-8 flex-1">
+            <h4 className="w-fit flex items-center justify-center px-2 py-1 rounded-full bg-blue-400 text-xs">Contact Us</h4>
+            <h2 className="text-3xl max-w-[40ch]">Need Help? We're Here</h2>
+            <p className="max-w-[70ch]">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla ipsam asperiores molestias. Eos labore sapiente totam, ad, alias voluptatibus et, rem debitis quidem inventore officia asperiores corporis harum odio eligendi.</p>
+            <div className="flex sm:flex-row flex-col md:gap-16 gap-4 items-start">
+              <div className="flex flex-row items-center gap-2">  <Award /> <p>Excellence</p></div>
+              <div className="flex flex-row items-center gap-2">  <ShieldPlus /> <p>Professionalism</p></div>
+              <div className="flex flex-row items-center gap-2">  <Sparkles /> <p>Expert</p></div>
+            </div>
+          </div>
+          <div className="sm:flex-1">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m13!1m8!1m3!1d902.3476113860994!2d84.263993!3d25.223771!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjXCsDEzJzI1LjMiTiA4NMKwMTUnNTAuNiJF!5e0!3m2!1sen!2sus!4v1736513599232!5m2!1sen!2sus"  className="border-0 h-full w-full" allowFullScreen={false} loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+
+          </section>
       </main>
       <footer className="flex flex-row p-8 justify-between bg-blue-400">
       <h4>Parv</h4>

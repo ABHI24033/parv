@@ -18,86 +18,108 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 
 
 
-const Step = ({ state, setState, step }) => {
-    return <div className="flex flex-col gap-8">
-        {
-            state[Object.keys(state)[step]].sections.map((section, i) => {
-                return <section className="flex flex-col gap-4" key={"section-" + i}>
-                    <div className="flex flex-col gap-2">
-                        <h2>{section.title}</h2>
-                        <Separator className="w-full" />
-                    </div>
-                    <div className="grid grid-cols-3 gap-6">
-                        {section.fields.map((field, ind) => {
-                            switch (field.type) {
-                                case "String":
-                                    return <div className="flex flex-col gap-2" key={"field-" + section + "" + ind}>
-                                        <Label htmlFor={field.name}>{field.label}</Label>
-                                        <Input id={field.name} value={field.value} onChange={(e) => {
-                                            setState((state) => {
-                                                state[step].sections[i].fields[ind].value = e.target.value;
-                                                return { ...state };
-                                            });
-                                        }} />
-                                    </div>;
-                                case "Date":
-                                    return <div className="flex flex-col gap-2">
-                                        <Label htmlFor={field.name}>{field.label}</Label>
-                                        <Input type="date" />
-                                    </div>;
-                                case "Option":
-                                    return <div className="flex flex-col gap-2 w-full">
-                                        <Label htmlFor={field.name}>{field.label}</Label>
-                                        <Select id={field.name} >
-                                            <SelectTrigger className="w-full">
-                                                <SelectValue placeholder={field.options[0].label} />
-                                            </SelectTrigger>
-                                            <SelectContent>
-                                                <SelectGroup>
-                                                    {
-                                                        field.options.map(option => <SelectItem value={option.label} key={option.label}>{option.label}</SelectItem>)
-                                                    }
-                                                </SelectGroup>
-                                            </SelectContent>
-                                        </Select>
-                                    </div>;
-                                case "Binary":
-                                    return <div className="flex flex-col gap-2">
-                                        <Label htmlFor={field.name}>{field.label}</Label>
-                                        <RadioGroup defaultValue="comfortable" className="flex flex-row gap-4 items-center">
-                                            <div className="flex items-center space-x-2">
-                                                <Label><RadioGroupItem value="default" /> Yes</Label>
-                                            </div>
-                                            <div className="flex items-center space-x-2">
-                                                <Label><RadioGroupItem value="comfortable" id="r2" /> No</Label>
-                                            </div>
-                                        </RadioGroup>
-                                    </div>
-                                default:
-                                    return <div className="flex flex-col gap-2">
-                                        <Label htmlFor={field.name}>{field.label}</Label>
-                                        <Input id={field.name} value={field.value} onChange={(e) => {
-                                            setState((state) => {
-                                                state[step].sections[i].fields[ind].value = e.target.value;
-                                                return { ...state };
-                                            });
-                                        }} />
-                                    </div>;
+const Step = ({ sectionInd, fieldInd, toggleFieldInd, field, setState, step, onChangeFunction }) => {
+
+
+    let onChange = function (e) {
+        setState((state) => {
+            console.log(state, step,e);
+            state[step].sections[sectionInd].fields[fieldInd].value = e.target.value;
+            return { ...state };
+        });
+    };
+    let toggleOnChange = function (e) {
+        setState((state) => {
+            console.log(state);
+            state[step].sections[sectionInd].fields[fieldInd].field[toggleFieldInd].value = e.target.value;
+            return { ...state };
+        });
+    };
+
+
+    switch (field.type) {
+        case "String":
+            return <div className="flex flex-col gap-2" key={"field-" + sectionInd + "-" + fieldInd}>
+                <Label htmlFor={field.name}>{field.label}</Label>
+                <Input id={field.name} value={field.value} onChange={onChangeFunction ? onChangeFunction : onChange} />
+            </div>;
+        case "Date":
+            return <div className="flex flex-col gap-2">
+                <Label htmlFor={field.name}>{field.label}</Label>
+                <Input type="date" onChange={onChangeFunction ? onChangeFunction : onChange} />
+            </div>;
+        case "Option":
+            return <div className="flex flex-col gap-2 w-full">
+                <Label htmlFor={field.name}>{field.label}</Label>
+                <Select id={field.name} onChange={onChangeFunction ? onChangeFunction : onChange} >
+                    <SelectTrigger className="w-full" >
+                        <SelectValue placeholder={field.options[0].label} />
+                    </SelectTrigger>
+                    <SelectContent>
+                        <SelectGroup>
+                            {
+                                field.options.map(option => <SelectItem value={option.label} key={option.label}>{option.label}</SelectItem>)
                             }
-                        })}
+                        </SelectGroup>
+                    </SelectContent>
+                </Select>
+            </div>;
+        case "Binary":
+            return <div className="flex flex-col gap-2">
+                <Label htmlFor={field.name}>{field.label}</Label>
+                <RadioGroup defaultValue="No" className="flex flex-row gap-4 items-center" onValueChange={onChangeFunction ? onChangeFunction : onChange}>
+                    <div className="flex items-center space-x-2">
+                        <Label><RadioGroupItem value="Yes" /> Yes</Label>
                     </div>
-
-                </section>
-            })
-        }
-
-    </div>
+                    <div className="flex items-center space-x-2">
+                        <Label><RadioGroupItem value="No" id="r2" /> No</Label>
+                    </div>
+                </RadioGroup>
+                <div className="flex flex-col">
+                    <p>hello</p>
+                    {
+                        field.fields && field.fields.map((e, toggleFieldInd) => {
+                            return <Step step={Object.keys(state)[step]} sectionInd={sectionInd} toggleFieldInd={toggleFieldInd} fieldInd={fieldInd} field={e} setState={setState} />
+                        })
+                    }
+                </div>
+            </div>
+        default:
+            return <div className="flex flex-col gap-2">
+                <Label htmlFor={field.name}>{field.label}</Label>
+                <Input id={field.name} value={field.value} onChange={onChangeFunction ? onChangeFunction : onChange} />
+            </div>;
+    }
 }
 
 const StepForm = ({
     state, setState, step
 }) => {
-    return <Step state={state} setState={setState} step={step}></Step>
+
+
+
+
+
+    return <div className="flex flex-col gap-8">
+        {
+
+
+            state[Object.keys(state)[step]].sections.map((section, sectionIndex) => {
+                return <section className="flex flex-col gap-4" key={"section-" + sectionIndex}>
+                    <div className="flex flex-col gap-2">
+                        <h2>{section.title}</h2>
+                        <Separator className="w-full" />
+                    </div>
+                    <div className="grid grid-cols-3 gap-6">
+                        {section.fields.map((field, fieldInd) => <Step step={Object.keys(state)[step]} sectionInd={sectionIndex} fieldInd={fieldInd} field={field} setState={setState} />)}
+                    </div>
+                </section>
+            })
+        }
+
+    </div>
+
+    // return <Step state={state} setState={setState} step={step}></Step>
 
 }
 
